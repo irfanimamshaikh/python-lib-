@@ -22,3 +22,36 @@ graph TD
     D --> E[Interactive Charts]
     B --> F[Session State]
     F --> G[User Preferences]
+
+```
+
+# this is streamlit code of student form 
+```
+import streamlit as st 
+    st.set_page_config(page_title="Student Form", layout="centered")
+
+st.title("Student Registration Form")
+
+# ---- FORM ----   
+with st.form("student_form"):
+    name = st.text_input("Student Name")
+    email = st.text_input("Email")
+    age = st.number_input("Age", min_value=1, max_value=100)
+    gender = st.selectbox("Gender", ["Male", "Female", "Other"])
+    course = st.selectbox(
+        "Course",
+        ["BCA", "BSC", "BCOM", "BA", "BTech"]
+    )
+    skills = st.multiselect(
+        "Skills",
+        ["Python", "Java", "AWS", "Docker", "Linux"]
+    ) ```
+
+    submit = st.form_submit_button("Submit")
+
+```
+```
+streamlit run student_form.py
+
+
+
